@@ -1,35 +1,36 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
 ---
 
-<Layout title="Welcome to Woosaree.ca">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Woosaree.ca</span></h1>
-		<p class="instructions">
-Hey you! Is your last name Woosaree and you know Arun?
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-        href="/new-subdomain"
-				title="Want a subdomain?"
-        body="For example, yourname.woosaree.ca and yourname.woosaree.com"
-			/>
-			<Card
-        href="/forward-email"
-        title="Want email forwarding?"
-        body="For example, all emails sent to yourname@woosaree.ca or yourname@woosaree.com will be forwarded to yourname@gmail.com"
-			/>
-		</ul>
-	</main>
-</Layout>
-
-<style>
-	main {
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+    color: white;
 		margin: auto;
 		padding: 1rem;
 		width: 800px;
-		max-width: calc(100% - 2rem);
+		max-width: calc(100% - 1rem);
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
@@ -81,4 +82,3 @@ Hey you! Is your last name Woosaree and you know Arun?
 		gap: 2rem;
 		padding: 0;
 	}
-</style>

@@ -1,0 +1,32 @@
+---
+title: subdomain.woosaree.ca
+layout: ../layouts/Markdown.astro
+---
+# So you want a subdomain, eh?
+
+Just lemme know what DNS records you need me to add. For example, if your website is on a server, it might be something like:
+
+<code>A example 93.184.215.14</code>
+<br/>
+<code>AAAA example 2606:2800:21f:cb07:6820:80da:af6b:8b2c</code>
+
+Which would mean that example.woosaree.ca points to the IP address 93.184.215.14
+
+
+Or if your website is hosted on another website's subdomain, you might want a CNAME record like so:
+
+<code>CNAME example example.com</code>
+
+Which would theoretically allow someone to visit example.woosaree.ca instead of example.com
+
+
+## Want some recommendations for how to make a website?
+
+- Astro: https://docs.astro.build/en/getting-started/
+- nextjs: https://nextjs.org/docs/getting-started/installation
+- zola: https://www.getzola.org/documentation/getting-started/overview/
+
+
+## Want an easy way to deploy your website? (not sponsored)
+
+just point vercel to your github repo with the website: https://vercel.com/
